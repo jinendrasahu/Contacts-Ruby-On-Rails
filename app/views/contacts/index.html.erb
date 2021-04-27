@@ -1,0 +1,33 @@
+<% if user_signed_in? %>
+
+<table class="table table-striped">
+  <thead class="thead-dark dc">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= link_to contact.first_name+' '+contact.last_name, contact %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.twitter %></td>
+     <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?'} ,class:"btn btn-outline-danger"  %></td>
+
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Contact', new_contact_path,class:'mytext btn btn-secondary' %>
+<% else %>
+<h1>Welcome To contact</h1>
+ 
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Editing Contact</h1>
+
+<%= render 'form', contact: @contact %>
+
+<%= link_to 'Destroy', @contact, method: :delete, data: { confirm: 'Are you sure?' },class:'mytext btn btn-danger mb-2' %> 
+<br/><%= link_to 'Show', @contact,class:'mytext btn btn-secondary' %>  
+<%= link_to 'Back', contacts_path ,class:'mytext btn btn-secondary'%>
+  
